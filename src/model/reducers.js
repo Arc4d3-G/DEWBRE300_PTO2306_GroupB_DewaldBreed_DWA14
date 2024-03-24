@@ -1,4 +1,4 @@
-import { MAX_COUNT, MIN_COUNT } from '../scripts.js';
+//@ts-check
 
 export const reducer = (state, action) => {
   if (action.type === 'INC_COUNT') {

@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: roboto;
+  background-color: rgb(53, 55, 58);
+  margin: 0;
+}

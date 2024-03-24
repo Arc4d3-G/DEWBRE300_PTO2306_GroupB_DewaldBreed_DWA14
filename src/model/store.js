@@ -8,6 +8,8 @@ export const states = [
     phase: 'normal',
     count: 0,
     stepAmount: 1,
+    maxCount: 5,
+    minCount: -5,
   },
 ];
 
