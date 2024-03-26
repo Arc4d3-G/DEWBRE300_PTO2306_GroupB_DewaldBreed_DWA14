@@ -41,6 +41,7 @@ class TallyCounter extends LitElement {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      padding: 100px;
     }
     button {
       background-color: rgb(67 166 245);
@@ -50,7 +51,16 @@ class TallyCounter extends LitElement {
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
+      font-size: 1.2rem;
+    }
+    button:hover {
+      background-color: rgb(99, 177, 241);
+    }
+
+    button:active {
+      background-color: rgb(99, 177, 241);
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
     }
   `;
 
@@ -65,24 +75,39 @@ class TallyCounter extends LitElement {
     this.maxCount = maxCount;
   }
 
+  /**
+   * Dispatch the increase function withing the current phase.
+   * see {@link actions} in actions.js
+   */
   increase() {
     dispatch(actions[this.phase].increase());
     this.count = getState().count;
     this.phase = getState().phase;
   }
 
+  /**
+   * Dispatch the decrease function withing the current phase.
+   * see {@link actions} in actions.js
+   */
   decrease() {
     dispatch(actions[this.phase].decrease());
     this.count = getState().count;
     this.phase = getState().phase;
   }
 
+  /**
+   * Dispatch the reset function withing the current phase.
+   * see {@link actions} in actions.js
+   */
   reset() {
     dispatch(actions[this.phase].reset());
     this.count = getState().count;
     this.phase = getState().phase;
   }
 
+  /**
+   * Sets the h3 to display the current phase
+   */
   currentPhase() {
     if (this.phase === 'atMin') {
       return 'Phase: At Minimum Count';
